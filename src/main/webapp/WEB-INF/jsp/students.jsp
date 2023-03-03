@@ -6,6 +6,11 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,81 +38,16 @@
     <th>Дата поступления</th>
 
   </tr>
+  <c:forEach  items = "${students}" var="s">
   <tr>
     <td><input type="checkbox"></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>${s.surname}</td>
+    <td>${s.name}</td>
+    <td>${s.group.name}</td>
+    <td><f:formatDate value="{s.date}" pattern="d/mm/yyyy"/> </td>
   </tr>
-  <tr>
-    <td><input type="checkbox"></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+  </c:forEach>
 
-  </tr>
-  <tr>
-    <td><input type="checkbox"></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-
-  </tr>
-  <tr>
-    <td><input type="checkbox"></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-
-  </tr>
-  <tr>
-    <td><input type="checkbox"></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-
-  </tr>
-  </tr>
-  <tr>
-    <td><input type="checkbox"></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-
-  </tr>
-  </tr>
-  <tr>
-    <td><input type="checkbox"></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-
-  </tr>
-  </tr>
-  <tr>
-    <td><input type="checkbox"></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-
-  </tr>
-  </tr>
-  <tr>
-    <td style="width: 2%;"><input type="checkbox"></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td style="width: 6%;"></td>
-
-  </tr>
 
   </tbody>
 </table>

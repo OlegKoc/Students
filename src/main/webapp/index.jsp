@@ -20,7 +20,7 @@
     <ul>
         <li><a href="students"><button href="" class="gradient-button">Список студентов</button></a></li>
         <li><a href="Term List"><button href="" class="gradient-button">Список терминов</button></a></li>
-        <li><a href="Disciplines List.html"><button href="" class="gradient-button">Дисциплины</button></a></li>
+        <li><a href="discipline"><button href="" class="gradient-button">Дисциплины</button></a></li>
         <li><a href="modifying.html"><button href="" class="gradient-button">Создание/изменение термина</button></a></li>
     </ul>
 </div>
