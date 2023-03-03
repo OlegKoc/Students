@@ -23,7 +23,7 @@ public class DBManager {
     static {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver"); //com.mysql.cj.jdbc.Driver
-            Connection connection = DriverManager.getConnection("jdbs:mysql://localhost:3306/nwe_students?user=root&password=vkznm2000"); // соединение с   БД
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/nwe_students?user=root&password=vkznm2000"); // соединение с   БД
             statement = connection.createStatement(); // объект для отправки запросов в БД
         } catch (Exception e) {
             e.printStackTrace();
