@@ -21,10 +21,13 @@
   <title>Document</title>
 </head>
 <body>
-<button hrev=""><a href=""> на главную</a></button>
+<button hrev=""><a href="/"> на главную</a></button>
 <h2 class="text-shadow-2" align="center">Список студентов</h2>
 
-<a href="creatingStudents"><button href="" class="gradient-button">Создать студента</button></a>
+<form action="" method ="get"></form>
+<a><form action="creatingStudents" method="get"><button class="gradient-button">Создать студента</button></form></a>
+
+
 <a href="StudentProgress.jsp"><button href="" class="gradient-button">Успеваемость студента...</button></a>
 <a href="ModifyingST.jsp"><button href="" class="gradient-button">внести изменения студента</button></a>
 <table border="">
