@@ -3,10 +3,7 @@ package db;
 import entity.Group;
 import entity.Student;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,12 +51,44 @@ public class DBManager {
 
             }
 
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
 
         return students;
+    }
+
+    public static int getGroupId(String groupName) {
+        try {
+            ResultSet resultSet = statement.executeQuery(String.format("select id from groupp as g where g.group = '%s';", groupName)); // executeQuery - запрос из БД
+            while (resultSet.next()) {
+
+                return resultSet.getInt(ID);
+            } // цикл(вернет группу), если такой группы нет, то работа метода закончится и далее вызываем метод, который создает новую группу(строчка ниже)
+
+            statement.execute(String.format("insert into `groupp` (`group`) values ('% s');", groupName)); //execute - метод, который что-то  создает в БД
+            resultSet = statement.executeQuery(String.format("select id from groupp as g where g.group = '%s';", groupName));
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Ошибка");
+        }
+        return -1;
+    }
+
+
+    public static void createStudent(String surname, String name, int id_group, String date) // метод, который создает студента
+    {
+
+        try {
+            statement.execute(String.format("insert into `student` (`surname`, `name`, `id_group`, `date`) values('%s', '%s', '%d', '%s');", surname, name, id_group, date));
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
 

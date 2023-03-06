@@ -21,7 +21,7 @@ public class DateService {
 
         } catch (Exception e) {
             e.printStackTrace();
-            throw new RuntimeException();
+            throw new RuntimeException("ошибка в форматировании");
         }
         return dateForDb;
     }
