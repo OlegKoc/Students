@@ -1,6 +1,7 @@
 package controllers;
 
 import db.DBManager;
+import services.DateService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,18 +15,20 @@ import java.io.IOException;
 public class CreatingStudentController extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException // метод - открывает страницу
+    {
 
         req.getRequestDispatcher("WEB-INF/jsp/creatingStudents.jsp").forward(req, resp);
 
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException // метод - создает нового студента
+    {
         String surname = req.getParameter("surname");
         String name = req.getParameter("name");
         String groupName = req.getParameter("group");
-        String date = req.getParameter("date");
+        String date = DateService.convertDateForDB(req.getParameter("date"));
 
         if (surname.equals("") || name.equals("") || groupName.equals("") || date.equals("")) {
             req.setAttribute("error", "1");

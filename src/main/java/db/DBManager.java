@@ -69,6 +69,9 @@ public class DBManager {
 
             statement.execute(String.format("insert into `groupp` (`group`) values ('% s');", groupName)); //execute - метод, который что-то  создает в БД
             resultSet = statement.executeQuery(String.format("select id from groupp as g where g.group = '%s';", groupName));
+            while (resultSet.next()){
+                return resultSet.getInt(ID);
+            }
 
 
         } catch (SQLException e) {
@@ -79,11 +82,11 @@ public class DBManager {
     }
 
 
-    public static void createStudent(String surname, String name, int id_group, String date) // метод, который создает студента
+    public static void createStudent(String surname, String name, int groupId, String date) // метод, который создает студента
     {
 
         try {
-            statement.execute(String.format("insert into `student` (`surname`, `name`, `id_group`, `date`) values('%s', '%s', '%d', '%s');", surname, name, id_group, date));
+            statement.execute(String.format("insert into `student` (`surname`, `name`, `id_group`, `date`) values('%s', '%s', '%d', '%s');", surname, name, groupId, date));
 
 
         } catch (Exception e) {
@@ -91,5 +94,5 @@ public class DBManager {
         }
     }
 }
-
+// insert into `student` (`surname`, `name`, `id_group`, `date`) values('Кочуров', 'Роман', '1', '2023-01-15');
 

@@ -47,7 +47,7 @@
     <td>${s.surname}</td>
     <td>${s.name}</td>
     <td>${s.group.name}</td>
-    <td><f:formatDate value="${s.date}" pattern="d/mm/yyyy"/> </td>
+    <td><f:formatDate value="${s.date}" pattern="dd/mm/yyyy"/> </td>
   </tr>
   </c:forEach>
 
