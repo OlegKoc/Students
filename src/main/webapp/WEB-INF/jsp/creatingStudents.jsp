@@ -25,23 +25,23 @@
 
   <fieldset>
     <legend>Контактная информация</legend>
-    <form action="/creatingStudents" method="post">
 
-    <p><label>Фамилия<input name="surname" type="text"></label></p> //   id="surname"
-    <p><label>Имя<input name="name" type="text"></label></p>
-    <p><label>группа<input name="group" type="text"></label></p>
-    <p><label>Дата поступления<input type="date" id="datetime-local"></label></p>
+    <form action="creatingStudents" method="post">
+           <div><label>Фамилия<input name="surname" type="text"></label></div>
+           <div><label>Имя<input name="name" type="text"></label></div>
+           <div><label>группа<input name="group" type="text"></label></div>
+           <div><label>Дата поступления<input name="date" type="date" id="datetime-local"></label></div>
 
-     <button class="gradient-button">создать</button>
+         <button class="gradient-button">создать</button>
+    </form>
 
-  </form>
-</fieldset>
+  </fieldset>
 
 
 
-<c:if test="${error  eq 1}">
-  <h5> Поля не должны быть пустыми!!!</h5>
-</c:if>
+     <c:if test="${error  eq 1}">
+            <h5 class="ffffff"> Поля не должны быть пустыми!!!</h5>
+     </c:if>
 
 
 

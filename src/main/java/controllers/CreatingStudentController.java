@@ -1,7 +1,6 @@
 package controllers;
 
 import db.DBManager;
-import services.DateService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -28,7 +27,7 @@ public class CreatingStudentController extends HttpServlet {
         String surname = req.getParameter("surname");
         String name = req.getParameter("name");
         String groupName = req.getParameter("group");
-        String date = DateService.convertDateForDB(req.getParameter("date"));
+        String date =  req.getParameter("date");                                              //DateService.convertDateForDB(req.getParameter("date"));
 
         if (surname.equals("") || name.equals("") || groupName.equals("") || date.equals("")) {
             req.setAttribute("error", "1");
@@ -36,10 +35,11 @@ public class CreatingStudentController extends HttpServlet {
             return;
         }
 
+
         int groupId = DBManager.getGroupId(groupName);
 
         DBManager.createStudent(surname, name, groupId, date);
-        resp.sendRedirect("/students"); // sendRedirect - метод возвращает на другую страницу после создания(завершения метода)
+        resp.sendRedirect("students"); // sendRedirect - метод возвращает на другую страницу после создания(завершения метода)
 
     }
 

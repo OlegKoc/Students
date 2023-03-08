@@ -1,9 +1,9 @@
 package services;
 
-import java.sql.Date;
 import java.text.DateFormat;
 import java.text.Format;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Locale;
 
 public class DateService {
@@ -14,9 +14,9 @@ public class DateService {
 
         try {
             DateFormat format = new SimpleDateFormat("MM/dd/yyyy", Locale.ENGLISH);
-            Date formattedDate = (Date) format.parse(date);
-            Format formattr = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            dateForDb = formattr.format(formattedDate);
+            Date formattedDate = format.parse(date);
+            Format formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            dateForDb = formatter.format(formattedDate);
 
 
         } catch (Exception e) {
