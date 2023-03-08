@@ -24,12 +24,16 @@
 <button hrev=""><a href="/"> на главную</a></button>
 <h2 class="text-shadow-2" align="center">Список студентов</h2>
 
-<form action="" method ="get"></form>
-<a><form action="creatingStudents" method="get"><button class="gradient-button">Создать студента</button></form></a>
+          <form action="" method ="get"></form>
+<a><form action="creatingStudents" method="get">
+  <button class="gradient-button">Создать студента</button>
+</form></a>
 
 
 <a href="StudentProgress.jsp"><button href="" class="gradient-button">Успеваемость студента...</button></a>
+
 <a href="ModifyingST.jsp"><button href="" class="gradient-button">внести изменения студента</button></a>
+
 <table border="">
   <caption>Список студентов</caption>
   <tbody>
@@ -47,7 +51,7 @@
     <td>${s.surname}</td>
     <td>${s.name}</td>
     <td>${s.group.name}</td>
-    <td><f:formatDate value="${s.date}" pattern="dd/mm/yyyy"/> </td>
+    <td><f:formatDate value="${s.date}" pattern="d/MM/yyyy"/> </td>
   </tr>
   </c:forEach>
 
