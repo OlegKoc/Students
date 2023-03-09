@@ -21,7 +21,7 @@
   <title>Document</title>
 </head>
 <body>
-<button hrev=""><a href="/"> на главную</a></button>
+<button hrev=""><a href="/main/webapp/index"> на главную</a></button>
 <h2 class="text-shadow-2" align="center">Список студентов</h2>
 
           <form action="" method ="get"></form>
