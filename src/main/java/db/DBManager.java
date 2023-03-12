@@ -2,6 +2,7 @@ package db;
 
 import entity.Group;
 import entity.Student;
+import services.StringService;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -91,6 +92,15 @@ public class DBManager {
 
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    public static void  deleteStudents(String[] ids){
+
+        try {
+            statement.execute(String.format("update `student` set `status` ='0' where id in(%s);", StringService.convertIdsIntoString(ids)));
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 }
