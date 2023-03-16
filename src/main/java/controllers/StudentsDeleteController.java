@@ -15,7 +15,7 @@ public class StudentsDeleteController  extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String ids = req.getParameter("idsFormDelete");
+        String ids = req.getParameter("idsForDelete");
         DBManager.deleteStudents(ids.split(" "));
         resp.sendRedirect("/students");
 

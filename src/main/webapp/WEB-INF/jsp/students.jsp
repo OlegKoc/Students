@@ -1,13 +1,6 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: User
-  Date: 25.02.2023
-  Time: 21:46
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 
@@ -34,7 +27,7 @@
      <a href="StudentProgress.jsp"><button href="" class="gradient-button">Успеваемость студента...</button></a>
 
      <a href="ModifyingST.jsp"><button  class="gradient-button">внести изменения студента</button></a>
-     <a> <button  onclick="deleteStudents()" class="gradient-button">Удалить выбранного студента</button></a>
+     <a><button onclick="deleteStudents()" class="gradient-button">Удалить выбранного студента</button></a>
 
 <table border="">
   <caption>Список студентов</caption>
@@ -73,6 +66,6 @@
 </body>
 
   <form action="/student_delete" method="post" id="deleteForm">
-    <input type="hidden" name="idsFormDelete" id="idsFormDelete">
+    <input type="hidden" name="idsForDelete" id="idsForDelete">
   </form>
 </html>
