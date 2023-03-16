@@ -39,7 +39,7 @@ public class DBManager {
 
             while (result.next()) {
                 Student student = new Student();
-                student.setID(result.getInt(ID));
+                student.setId(result.getInt(ID));
                 student.setSurname(result.getString(SURNAME));
                 student.setName(result.getString(NAME));
                 student.setDate(result.getDate(DATE));
@@ -99,8 +99,9 @@ public class DBManager {
 
         try {
             statement.execute(String.format("update `student` set `status` ='0' where id in(%s);", StringService.convertIdsIntoString(ids)));
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+        } catch (Exception e) {
+            e.printStackTrace();
+
         }
     }
 }

@@ -7,7 +7,7 @@ public class StringService {
         StringBuilder result = new StringBuilder();
 
         for (String id : ids) {
-            result.append(",").append(id).append("', ");
+            result.append("'").append(id).append("', ");
             
         }
         result.setLength(result.length()-2);

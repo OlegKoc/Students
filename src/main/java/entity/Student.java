@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public class Student {
 
-    private int ID;
+    private int id;
 
     private String name;
 
@@ -19,20 +19,20 @@ public class Student {
 
     }
 
-    public Student(int ID, String name, String surname, Group group, Date date) {
-        this.ID = ID;
+    public Student(int id, String name, String surname, Group group, Date date) {
+        this.id = id;
         this.name = name;
         this.surname = surname;
         this.group = group;
         this.date = date;
     }
 
-    public int getID() {
-        return ID;
+    public int getId() {
+        return id;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -72,18 +72,18 @@ public class Student {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Student student = (Student) o;
-        return ID == student.ID && Objects.equals(name, student.name) && Objects.equals(surname, student.surname) && Objects.equals(group, student.group) && Objects.equals(date, student.date);
+        return id == student.id && Objects.equals(name, student.name) && Objects.equals(surname, student.surname) && Objects.equals(group, student.group) && Objects.equals(date, student.date);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(ID, name, surname, group, date);
+        return Objects.hash(id, name, surname, group, date);
     }
 
     @Override
     public String toString() {
         return "Student{" +
-                "ID=" + ID +
+                "ID=" + id +
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", group=" + group +
